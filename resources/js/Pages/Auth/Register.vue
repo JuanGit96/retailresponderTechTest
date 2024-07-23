@@ -139,7 +139,7 @@ h1.font-bold {
 hr {
     border: none;
     width: 76%;
-    height: 50px;
+    height: 44px;
     border-bottom: 0px solid #1f120970;
     box-shadow: 0 15px 26px -20px #333;
     margin: 0 auto 0;
