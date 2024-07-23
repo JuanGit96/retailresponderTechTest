@@ -92,12 +92,12 @@ const submit = () => {
 
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
-            <div class="flex items-center justify-end mt-6">
+            <div class="flex items-center justify-end mt-4">
                 <PrimaryButtonAmazon>
                     Crear una cuenta de Amazon
                 </PrimaryButtonAmazon>
             </div>
-            <hr class="mt-3 mb-3 opacity-0"/>
+            <hr class="opacity-0"/>
             <p>Al crear cuenta, aceptas las <a href="" class="text-blue-500">condiciones de uso</a> y el <a href="" class="text-blue-500">Aviso de privacidad de Amazon</a></p>
             <hr class=""/>
             <div class="flex items-center justify-end mt-4">
@@ -140,9 +140,8 @@ hr {
     border: none;
     width: 76%;
     height: 50px;
-    margin-top: -23px !important;
     border-bottom: 0px solid #1f120970;
     box-shadow: 0 15px 26px -20px #333;
-    margin: -50px auto 10px;
+    margin: 0 auto 0;
 }
 </style>
