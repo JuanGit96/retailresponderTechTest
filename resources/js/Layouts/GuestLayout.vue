@@ -19,3 +19,9 @@ import { Link } from '@inertiajs/vue3';
         </div>
     </div>
 </template>
+
+<script>
+window.addEventListener('beforeunload', (event) => {
+    console.log('Page is unloading');
+});
+</script>

@@ -24,10 +24,11 @@ const submit = () => {
 <template>
     <GuestLayout>
         <Head title="Register" />
+        <h1 class="font-bold w-48">Crear Cuenta</h1>
 
         <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
+            <div class="mt-4">
+                <InputLabel for="name" value="Tu nombre" />
 
                 <TextInput
                     id="name"
@@ -43,7 +44,7 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="email" value="Email" />
+                <InputLabel for="email" value="Correo electronico" />
 
                 <TextInput
                     id="email"
@@ -58,7 +59,7 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                <InputLabel for="password" value="Tu contraseña" />
 
                 <TextInput
                     id="password"
@@ -67,13 +68,18 @@ const submit = () => {
                     v-model="form.password"
                     required
                     autocomplete="new-password"
+                    placeholder="debe tener al menos 6 caracteres"
                 />
+                <div class="input-info">
+                    <span class="icon">!</span>
+                    <span class="info-text">Minimo 6 caracteres</span>
+                </div>
 
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <InputLabel for="password_confirmation" value="Vuelve a repetir la contraseña" />
 
                 <TextInput
                     id="password_confirmation"
@@ -86,24 +92,57 @@ const submit = () => {
 
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <Link
-                    :href="route('login')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Already registered?
-                </Link>
-
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
-            </div>
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-end mt-6">
                 <PrimaryButtonAmazon>
                     Crear una cuenta de Amazon
                 </PrimaryButtonAmazon>
             </div>
+            <hr class="mt-3 mb-3 opacity-0"/>
+            <p>Al crear cuenta, aceptas las <a href="" class="text-blue-500">condiciones de uso</a> y el <a href="" class="text-blue-500">Aviso de privacidad de Amazon</a></p>
+            <hr class=""/>
+            <div class="flex items-center justify-end mt-4">
+                <p class="p-2">¿Ya tienes una cuenta?</p>
+                <Link
+                    :href="route('login')"
+                    class="text-blue-500 underline text-sm hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                    Iniciar sesión >
+                </Link>
+            </div>
         </form>
     </GuestLayout>
 </template>
+
+<style>
+h1.font-bold {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.icon {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+    background-color: #00b7ff; /* Color del ícono */
+    color: #333; /* Color del texto del ícono */
+    text-align: center;
+    line-height: 1rem;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.info-text {
+    font-size: 0.8rem;
+}
+
+hr {
+    border: none;
+    width: 76%;
+    height: 50px;
+    margin-top: -23px !important;
+    border-bottom: 0px solid #1f120970;
+    box-shadow: 0 15px 26px -20px #333;
+    margin: -50px auto 10px;
+}
+</style>
