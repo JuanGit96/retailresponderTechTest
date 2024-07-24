@@ -239,3 +239,11 @@ desde el navegador puedes entrar con la url "localhost"
 2. Para la instalacion necesitas Docker, composer, php8.2, token oAuth de github
 3. Tambien necesitas copiar el .env que es el mismo .env.example
 4. Si no tienes npm pueses instalarlo ./vendor/bin/sail npm install o simplemente npm install dependiendo de tu entorno
+5. Si no vez el diseño actual, es posible que en la instalacion laravel haya hecho cambio a los recursos
+
+Por lo que es recomendable correr
+
+- git status
+- git checkout .
+
+![Descripción de la imagen](public/images/img_error.png)
